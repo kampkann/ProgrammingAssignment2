@@ -3,15 +3,6 @@
 ## cached value will be checked before calculating the inverse.
 ## if cached value exists it returns the value otherwise calculates, and cache it for reuse.
 ##########################################################
-## example usage : 
-##
-##
-##
-##
-##
-##
-##
-##########################################################
 ## makeCacheMatrix has 4 methods get, set, getinverse, setinverse
 ##  getinverse is to get whether the inverse is already calculated and kept in cache
 ##  setinverse is to set the inverse which is effectively to be called by the cacheSolve function
@@ -55,3 +46,14 @@ cacheSolve <- function(x, ...) {
   x$setinverse(m)
   m
 }
+
+##########################################################
+## example usage : 
+##   x <- matrix(c(2,2,3,2), nrow = 2, ncol = 2 )
+##   y <- makeCacheMatrix(x)
+##   cacheSolve(y)
+##   cacheSolve(y)  ## this will bring from the cached data .
+##
+##  As indicated in the assignment the function persumes the given matrix is invertible
+##########################################################
+
